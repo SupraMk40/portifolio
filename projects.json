@@ -1,0 +1,20 @@
+{
+  "projetos": [
+    {
+      "titulo": "Landing Page Premium",
+      "descricao": "Design com foco em conversão, tipografia e motion suave.",
+      "tags": ["UI", "UX", "Motion"]
+    },
+    {
+      "titulo": "Identidade Digital",
+      "descricao": "Sistema visual consistente do site às redes.",
+      "tags": ["Brand", "Web", "Design"]
+    },
+    {
+      "titulo": "Experiência Imersiva",
+      "descricao": "Interações líquidas e microanimações para engajar.",
+      "tags": ["Interaction", "UI", "Craft"]
+    }
+  ]
+}
+
