@@ -5,9 +5,37 @@
 /* Liquid Glass classes (required) */
 * { box-sizing: border-box; }
 html, body { width: 100%; overflow-x: hidden; }
-html { overflow-y: hidden; }
-body { overflow-y: hidden; }
+html { overflow-y: auto; }
+
+body { overflow-y: auto; }
+
 img, svg, video { max-width: 100%; }
+
+/* Background video fixed (immerse) */
+.bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.70);
+}
+
+.liquid-fx-fixed {
+  position: absolute;
+  inset: 0;
+}
 
 /* Liquid Glass classes (required) */
 .liquid-glass {
@@ -116,4 +144,36 @@ img, svg, video { max-width: 100%; }
     animation: none;
   }
 }
+
+/* Projects gallery */
+.projects-card {
+  transition: transform 240ms ease, border-color 240ms ease, filter 240ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projects-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.projects-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.72) 65%, rgba(0, 0, 0, 0.88) 100%);
+  transition: background 240ms ease;
+}
+
+.projects-card:hover .projects-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.64) 60%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.18;
+}
+
+.projects-title {
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
 

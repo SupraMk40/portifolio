@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitor — Web Designer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (optional) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+  <!-- Background video -->
+  <div class="relative min-h-screen">
+    <video
+      id="bgVideo"
+      class="absolute inset-0 h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    ></video>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0 liquid-fx"></div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50">
+      <nav class="mx-auto max-w-6xl px-4 py-4">
+        <div class="glass-pill flex items-center justify-between gap-3 rounded-2xl px-4 py-3">
+          <div class="flex items-center gap-3">
+            <div class="grid place-items-center rounded-full glass-pill h-10 w-10">
+              <!-- Globe icon -->
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20"></path>
+                <path d="M12 2a15.3 15.3 0 0 1 0 20"></path>
+                <path d="M12 2a15.3 15.3 0 0 0 0 20"></path>
+              </svg>
+            </div>
+            <span class="text-base md:text-lg font-medium tracking-tight">Vitor</span>
+          </div>
+
+          <ul class="hidden md:flex items-center gap-6 text-sm text-white/90">
+            <li><a class="hover:text-white transition" href="#home">Home</a></li>
+            <li><a class="hover:text-white transition" href="#projetos">Projetos</a></li>
+            <li><a class="hover:text-white transition" href="#sobre">Sobre</a></li>
+            <li><a class="hover:text-white transition" href="#contato">Contato</a></li>
+          </ul>
+
+          <div class="flex items-center gap-3">
+            <button id="openContact" class="glass-pill px-4 py-2 text-sm font-semibold liquid-glass-btn transition hover:brightness-110 active:brightness-95">
+              Vamos Conversar
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero (single-screen) -->
+    <main id="home" class="relative z-10 w-full min-h-[100svh] min-h-[100dvh] flex flex-col items-center justify-start px-4">
+      <section class="w-full max-w-3xl text-center pt-20 pb-10">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2 mb-6">
+          <span class="text-xs tracking-[0.25em] uppercase text-white/80">WEB DESIGNER &amp; DIGITAL CRAFTSMAN</span>
+        </div>
+
+        <h1 class="font-[InstrumentSerif] text-5xl md:text-7xl leading-[1.02] tracking-tight">
+          <span class="heading-gradient">Criando experiências digitais que contam histórias</span>
+        </h1>
+
+        <p class="mt-5 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
+          Especialista em interfaces elegantes, motion design e marcas que se destacam na internet.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="#projetos" class="primary-cta glass-pill px-5 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">
+            Ver Meus Projetos
+          </a>
+
+          <button id="toggleEmail" class="secondary-cta glass-pill px-5 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">
+            Entrar em Contato
+          </button>
+        </div>
+
+        <!-- Email capture (toggle) -->
+        <div id="emailBox" class="mt-6 hidden">
+          <form id="emailForm" class="glass-panel mx-auto max-w-xl p-4 md:p-5 rounded-3xl">
+            <div class="flex flex-col sm:flex-row gap-3 items-stretch">
+              <label class="sr-only" for="emailInput">Email</label>
+              <input
+                id="emailInput"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                class="glass-input flex-1 px-4 py-3 rounded-2xl border border-white/10 bg-white/5 outline-none placeholder:text-white/40 focus:border-white/25 transition"
+                placeholder=""
+              />
+              <button type="submit" class="px-5 py-3 rounded-2xl glass-pill font-semibold hover:brightness-110 transition">
+                Enviar
+              </button>
+            </div>
+            <p id="emailHint" class="mt-3 text-xs text-white/60">Resposta rápida — sem spam.</p>
+            <div id="emailSuccess" class="hidden mt-3 text-sm text-emerald-300"></div>
+          </form>
+        </div>
+
+        <div class="mt-6">
+          <a id="reelLink" href="#" class="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
+            <span class="inline-flex h-9 w-9 items-center justify-center glass-pill rounded-full">
+              <!-- Play icon -->
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7L8 5z" />
+              </svg>
+            </span>
+            Assistir Reel
+          </a>
+        </div>
+      </section>
+
+      <!-- Projetos (galeria) -->
+      <section id="projetos" class="w-full py-10">
+        <div class="mx-auto max-w-6xl px-0">
+          <div class="flex items-center justify-center">
+            <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+              <span class="text-xs tracking-[0.22em] uppercase text-white/80">Projetos</span>
+            </div>
+          </div>
+
+          <div id="projectsGrid" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <!-- Cards renderizados via script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Discrete anchor sections for navbar -->
+      <div class="sr-only">
+        <section id="sobre"></section>
+        <section id="contato"></section>
+      </div>
+    </main>
+  </div>
+
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
