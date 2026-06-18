@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 /* Liquid Glass classes (required) */
+* { box-sizing: border-box; }
+html, body { width: 100%; overflow-x: hidden; }
+html { overflow-y: hidden; }
+body { overflow-y: hidden; }
+img, svg, video { max-width: 100%; }
+
+/* Liquid Glass classes (required) */
 .liquid-glass {
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(4px);
