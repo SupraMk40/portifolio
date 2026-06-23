@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vitor — Web Designer</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN (optional) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-  <!-- Background video -->
   <div class="bg-fixed" aria-hidden="true">
     <video
       id="bgVideo"
@@ -32,13 +27,11 @@
     <div class="liquid-fx liquid-fx-fixed"></div>
   </div>
 
-  <!-- Navbar + Content -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <nav class="mx-auto max-w-6xl px-4 py-4">
       <div class="glass-pill flex items-center justify-between gap-3 rounded-2xl px-4 py-3">
         <div class="flex items-center gap-3">
           <div class="grid place-items-center rounded-full glass-pill h-10 w-10">
-            <!-- Globe icon -->
             <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M2 12h20"></path>
@@ -46,181 +39,244 @@
               <path d="M12 2a15.3 15.3 0 0 0 0 20"></path>
             </svg>
           </div>
-          <span class="text-base md:text-lg font-medium tracking-tight">Vitor</span>
+          <span class="text-base md:text-lg font-medium tracking-tight" id="brandName">Vertex</span>
         </div>
 
-        <ul class="hidden md:flex items-center gap-6 text-sm text-white/90">
-          <li><a class="hover:text-white transition" href="#home">Home</a></li>
-          <li><a class="hover:text-white transition" href="#projetos">Projetos</a></li>
-          <li><a class="hover:text-white transition" href="#sobre">Sobre</a></li>
-          <li><a class="hover:text-white transition" href="#contato">Contato</a></li>
-        </ul>
+        <ul class="hidden md:flex items-center gap-6 text-sm text-white/90" id="navLinks"></ul>
 
         <div class="flex items-center gap-3">
-          <button id="openContact" class="glass-pill px-4 py-2 text-sm font-semibold liquid-glass-btn transition hover:brightness-110 active:brightness-95">
-            Vamos Conversar
-          </button>
+          <a id="ctaTop" href="#faq" class="glass-pill px-4 py-2 text-sm font-semibold liquid-glass-btn transition hover:brightness-110 active:brightness-95">Vamos Conversar</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Hero (single-screen) -->
-  <main id="home" class="relative z-10 w-full min-h-[100svh] min-h-[100dvh] flex flex-col items-center justify-start px-4 pt-[88px]">
-    <section class="w-full max-w-3xl text-center pt-20 pb-10">
-      <div class="inline-flex items-center gap-2 glass-pill px-4 py-2 mb-6">
-        <span class="text-xs tracking-[0.25em] uppercase text-white/80">WEB DESIGNER &amp; DIGITAL CRAFTSMAN</span>
-      </div>
-
-      <h1 class="font-[InstrumentSerif] text-5xl md:text-7xl leading-[1.02] tracking-tight">
-        <span class="heading-gradient">Criando experiências digitais que contam histórias</span>
-      </h1>
-
-      <p class="mt-5 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-        Especialista em interfaces elegantes, motion design e marcas que se destacam na internet.
-      </p>
-
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#projetos" class="primary-cta glass-pill px-5 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">
-          Ver Meus Projetos
-        </a>
-
-        <button id="toggleEmail" class="secondary-cta glass-pill px-5 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">
-          Entrar em Contato
-        </button>
-      </div>
-
-      <!-- Email capture (toggle) -->
-      <div id="emailBox" class="mt-6 hidden">
-        <form id="emailForm" class="glass-panel mx-auto max-w-xl p-4 md:p-5 rounded-3xl">
-          <div class="flex flex-col sm:flex-row gap-3 items-stretch">
-            <label class="sr-only" for="emailInput">Email</label>
-            <input
-              id="emailInput"
-              name="email"
-              type="email"
-              required
-              autocomplete="email"
-              class="glass-input flex-1 px-4 py-3 rounded-2xl border border-white/10 bg-white/5 outline-none placeholder:text-white/40 focus:border-white/25 transition"
-              placeholder=""
-            />
-            <button type="submit" class="px-5 py-3 rounded-2xl glass-pill font-semibold hover:brightness-110 transition">
-              Enviar
-            </button>
+  <main class="relative z-10 w-full min-h-[100svh] min-h-[100dvh] flex flex-col items-center justify-start px-4 pt-[88px]">
+    <!-- HERO -->
+    <section id="hero" class="w-full max-w-6xl pt-10 pb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 glass-pill px-4 py-2 mb-4">
+            <span class="text-xs tracking-[0.25em] uppercase text-white/80">Vertex</span>
           </div>
-          <p id="emailHint" class="mt-3 text-xs text-white/60">Resposta rápida — sem spam.</p>
-          <div id="emailSuccess" class="hidden mt-3 text-sm text-emerald-300"></div>
-        </form>
-      </div>
 
-      <div class="mt-6">
-        <a id="reelLink" href="#" class="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
-          <span class="inline-flex h-9 w-9 items-center justify-center glass-pill rounded-full">
-            <!-- Play icon -->
-            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-              <path d="M8 5v14l11-7L8 5z" />
-            </svg>
-          </span>
-          Assistir Reel
-        </a>
-      </div>
-    </section>
+          <h1 class="font-[InstrumentSerif] text-4xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+            <span class="heading-gradient" id="heroSlogan">Transformamos pixels em vértices de sucesso.</span>
+          </h1>
 
-    <!-- Projetos (galeria) -->
-    <section id="projetos" class="w-full py-10">
-      <div class="mx-auto max-w-6xl">
-        <div class="flex items-center justify-center">
-          <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
-            <span class="text-xs tracking-[0.22em] uppercase text-white/80">PROJETOS</span>
+          <div class="mt-4 text-sm md:text-base text-white/75 space-y-2">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>Em equipe.</span></div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>5 anos de experiência</span></div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>Brasil</span></div>
+          </div>
+
+          <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl" id="heroPromise">Sites que transformam visitantes em clientes.</p>
+          <p class="mt-4 text-base md:text-lg text-white/80 max-w-xl" id="heroAbout" ></p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-3">
+            <a href="#projetos" class="primary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">Ver Projetos</a>
+            <a href="https://wa.me/SEU_NUMERO" target="_blank" rel="noreferrer" class="secondary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">WhatsApp</a>
           </div>
         </div>
 
-        <div id="projectsGrid" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          <!-- Cards renderizados via script.js -->
+        <div class="relative">
+          <div id="hero-3d" class="hero-3d min-h-[320px] lg:min-h-[420px] rounded-3xl overflow-hidden glass-panel"></div>
+          <div class="mt-4 text-xs text-white/60 leading-relaxed">Sem nicho principal. Empresas de médio porte.</div>
         </div>
       </div>
     </section>
 
-    <!-- Sobre (Footer) -->
-    <footer id="sobre" class="relative z-10 w-full">
-      <div class="mx-auto max-w-6xl px-4 pt-16 pb-10">
-        <div class="glass-panel rounded-3xl px-5 sm:px-8 py-10">
-          <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-2 glass-pill px-4 py-2 mb-6">
-              <span class="text-xs tracking-[0.22em] uppercase text-white/80">Sobre</span>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-medium tracking-tight">
-              Design confiável, execução impecável.
-            </h2>
-
-            <p class="mt-4 text-base sm:text-lg text-white/75 leading-[1.7]">
-              Sou um designer especializado em experiências digitais premium.
-              Combino estratégia, estética refinada e uma atenção obsessiva aos detalhes para transformar ideias em
-              interfaces elegantes — com fluidez, clareza e intenção.
-            </p>
-
-            <p class="mt-3 text-base sm:text-lg text-white/75 leading-[1.7]">
-              Entrego projetos com alto padrão de qualidade, pontualidade e confiabilidade.
-              Tenho paixão por criar interfaces que não só são bonitas, mas que realmente funcionam e geram resultado.
-              Trabalho com marcas que buscam excelência e diferenciação no mercado.
-            </p>
-
-            <div class="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2">
-              <div class="h-px w-full sm:w-28 bg-white/10" aria-hidden="true"></div>
-              <p class="text-sm text-white/60 tracking-tight">
-                Confiança. Qualidade. Excelência.
-              </p>
-              <div class="h-px w-full sm:w-28 bg-white/10" aria-hidden="true"></div>
-            </div>
-
-          </div>
+    <!-- CREDIBILIDADE -->
+    <section id="credibilidade" class="w-full max-w-6xl py-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="glass-panel rounded-3xl p-5">
+          <div class="text-xs tracking-[0.22em] uppercase text-white/70">Promessa</div>
+          <div class="mt-2 text-lg font-semibold">Sites que transformam visitantes em clientes.</div>
         </div>
+        <div class="glass-panel rounded-3xl p-5">
+          <div class="text-xs tracking-[0.22em] uppercase text-white/70">Público</div>
+          <div class="mt-2 text-lg font-semibold">Empresas de médio porte</div>
+        </div>
+        <div class="glass-panel rounded-3xl p-5">
+          <div class="text-xs tracking-[0.22em] uppercase text-white/70">Foco</div>
+          <div class="mt-2 text-lg font-semibold">Performance técnica + suporte ilimitado</div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Barra de meios de contato (liquid glass) -->
-        <div class="mt-6 pt-6 border-t border-white/10">
-          <div class="glass-panel rounded-3xl p-4 sm:p-5">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div class="inline-flex items-center gap-2 flex-wrap">
-                <a href="#contato" class="glass-pill px-4 py-2 text-sm text-white/80 hover:text-white transition">
-                  Contato
-                </a>
-                <a href="#" class="glass-pill px-4 py-2 text-sm text-white/80 hover:text-white transition" aria-disabled="true">
-                  Instagram
-                </a>
-                <a href="#" class="glass-pill px-4 py-2 text-sm text-white/80 hover:text-white transition" aria-disabled="true">
-                  Behance
-                </a>
+    <!-- SOBRE -->
+    <section id="sobre" class="w-full max-w-6xl py-6">
+      <div class="glass-panel rounded-3xl p-6 md:p-10">
+        <div class="text-xs tracking-[0.22em] uppercase text-white/70">Sobre</div>
+        <h2 class="mt-3 text-2xl md:text-3xl font-medium">Eu sou empreendedor apaixonado por tecnologia.</h2>
+        <p class="mt-4 text-base md:text-lg text-white/75 leading-[1.8]" id="aboutText"></p>
+        <div class="mt-6 flex flex-col md:flex-row gap-4">
+          <div class="glass-pill px-4 py-2">Em equipe.</div>
+          <div class="glass-pill px-4 py-2">5 anos de experiência</div>
+          <div class="glass-pill px-4 py-2">Brasil</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="w-full max-w-6xl py-6">
+      <div class="text-center mb-4">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+          <span class="text-xs tracking-[0.22em] uppercase text-white/80">Serviços</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-panel rounded-3xl p-6">
+          <h3 class="text-lg font-semibold">O que entrego</h3>
+          <ul class="mt-4 space-y-2 text-white/75">
+            <li>Landing Pages</li>
+            <li>Websites institucionais</li>
+            <li>Domínio e hospedagem de sites</li>
+            <li>Assistência e similares</li>
+          </ul>
+        </div>
+        <div class="glass-panel rounded-3xl p-6">
+          <h3 class="text-lg font-semibold">Valor</h3>
+          <p class="mt-4 text-white/75 leading-[1.8]">Eu não entrego apenas um site bonito. Eu construo o ponto mais alto da presença digital da sua marca.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section id="processo" class="w-full max-w-6xl py-6">
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+        <div class="md:col-span-2 glass-panel rounded-3xl p-6">
+          <div class="text-xs tracking-[0.22em] uppercase text-white/70">Processo</div>
+          <h3 class="mt-3 text-2xl font-medium">Do briefing à entrega</h3>
+          <p class="mt-3 text-white/75 leading-[1.8]">Fluxo claro, revisões e entrega final.</p>
+        </div>
+        <div class="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="glass-pill px-4 py-3">1) Briefing</div>
+          <div class="glass-pill px-4 py-3">2) Planejamento</div>
+          <div class="glass-pill px-4 py-3">3) Design</div>
+          <div class="glass-pill px-4 py-3">4) Desenvolvimento</div>
+          <div class="glass-pill px-4 py-3">5) Revisão</div>
+          <div class="glass-pill px-4 py-3">6) Entrega</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="w-full max-w-6xl py-6">
+      <div class="text-center mb-5">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+          <span class="text-xs tracking-[0.22em] uppercase text-white/80">Projetos</span>
+        </div>
+      </div>
+
+      <div id="projectsCarousel" class="glass-panel rounded-3xl p-5 md:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+          <div class="lg:col-span-3">
+            <img id="projectHero" data-project-hero class="w-full h-[260px] object-cover rounded-2xl" alt="Projeto" />
+            <div class="mt-4 flex items-center justify-between gap-3">
+              <div class="flex gap-2" aria-label="Controles">
+                <button data-carousel-prev class="projects-nav-btn glass-pill px-4 py-2" type="button">←</button>
+                <button data-carousel-next class="projects-nav-btn glass-pill px-4 py-2" type="button">→</button>
               </div>
-
-              <p class="text-sm text-white/60 tracking-tight">
-                Confiança. Qualidade. Excelência.
-              </p>
+              <div class="flex-1"></div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Lista de projetos">
+              <div class="flex gap-2" data-carousel-list></div>
             </div>
           </div>
+
+          <div class="lg:col-span-2">
+            <div class="text-xs tracking-[0.22em] uppercase text-white/70">Em destaque</div>
+            <div class="mt-3 text-2xl font-semibold" data-project-title></div>
+            <div class="mt-2 text-white/75" data-project-meta></div>
+            <div class="mt-2 text-white/75" data-project-style></div>
+
+            <a id="projectOpen" data-project-open href="#" target="_blank" rel="noreferrer" class="mt-6 primary-cta glass-pill px-6 py-3 inline-flex items-center justify-center">Abrir projeto</a>
+
+            <div class="mt-6 text-xs text-white/60 leading-relaxed">Para adicionar mais projetos: edite `projects.json`.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="w-full max-w-6xl py-6">
+      <div class="text-center mb-5">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+          <span class="text-xs tracking-[0.22em] uppercase text-white/80">Diferenciais</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-panel rounded-3xl p-6">
+          <h3 class="text-lg font-semibold">Sem enrolação</h3>
+          <ul class="mt-4 space-y-2 text-white/75">
+            <li>Portfólio relevante</li>
+            <li>Processo definido e documentado</li>
+            <li>Performance técnica extrema</li>
+          </ul>
+        </div>
+        <div class="glass-panel rounded-3xl p-6">
+          <h3 class="text-lg font-semibold">Pós-entrega</h3>
+          <ul class="mt-4 space-y-2 text-white/75">
+            <li>Suporte pos-entrega robusto e ilimitado</li>
+            <li>Confiança e segurança</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="w-full max-w-6xl py-6">
+      <div class="text-center mb-5">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+          <span class="text-xs tracking-[0.22em] uppercase text-white/80">FAQ</span>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-6 md:p-10">
+        <div id="faqList" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta" class="w-full max-w-6xl py-6">
+      <div class="glass-panel rounded-3xl p-6 md:p-10">
+        <div class="text-center">
+          <div class="text-xs tracking-[0.22em] uppercase text-white/70">CTA Final</div>
+          <h2 class="mt-3 text-2xl md:text-3xl font-medium" id="ctaTitle"></h2>
+          <p class="mt-3 text-white/75" id="ctaSub"></p>
         </div>
 
-        <div class="mt-10 pt-6 border-t border-white/10">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <p class="text-xs text-white/55 tracking-tight">
-              © <span id="year"></span> Vitor. Todos os direitos reservados.
-            </p>
-            <p class="text-xs text-white/55 tracking-tight">
-              Interface premium, do conceito à entrega.
-            </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a id="ctaWhatsapp" class="primary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a id="ctaInstagram" class="secondary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold" target="_blank" rel="noreferrer">Instagram</a>
+          <a id="ctaLinkedin" class="secondary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full max-w-6xl pb-14">
+      <div class="mt-6 glass-panel rounded-3xl p-6 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <div class="text-sm text-white/70">Vertex</div>
+            <div class="mt-1 text-base font-medium" id="footerSlogan"></div>
           </div>
+          <div class="text-xs text-white/60" id="footerCopy"></div>
         </div>
       </div>
     </footer>
-
-    <div class="sr-only">
-      <section id="contato"></section>
-    </div>
   </main>
 
-  <!-- HLS.js -->
+  <div class="sr-only"><section id="contato"></section></div>
+
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="carousel-projects.js"></script>
+  <script src="hero-futuristic.js"></script>
   <script src="script.js"></script>
+  <script src="landing-data.js"></script>
 </body>
 </html>
+
 

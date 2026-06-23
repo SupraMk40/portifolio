@@ -176,4 +176,41 @@ img, svg, video { max-width: 100%; }
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+/* Hero placeholder 3D */
+.hero-3d {
+  position: relative;
+  background: radial-gradient(circle at 30% 20%, rgba(120, 200, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(210, 150, 255, 0.22), transparent 50%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-3d-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.00), rgba(120, 200, 255, 0.18), rgba(255, 255, 255, 0.00));
+  filter: blur(0.2px);
+}
+
+/* Carousel */
+.projects-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.projects-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.projects-dot[aria-current="true"] {
+  background: rgba(120, 200, 255, 0.85);
+  border-color: rgba(120, 200, 255, 0.85);
+}
+
+
+
 

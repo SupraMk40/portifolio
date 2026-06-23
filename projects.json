@@ -1,22 +1,25 @@
 {
   "projetos": [
     {
-      "titulo": "Landing Page Premium",
-      "descricao": "Design com foco em conversão, tipografia e motion suave.",
-      "tags": ["UI", "UX", "Motion"],
-      "imageUrl": "https://picsum.photos/seed/landing-premium/1200/800"
+      "nome": "Landing Page Premium",
+      "segmento": "SaaS / Produtos digitais",
+      "estilo": "Futurista / Glitch controlado",
+      "imageHeroUrl": "https://picsum.photos/seed/landing-premium/1200/800",
+      "urlProjeto": "#"
     },
     {
-      "titulo": "Identidade Digital",
-      "descricao": "Sistema visual consistente do site às redes.",
-      "tags": ["Brand", "Web", "Design"],
-      "imageUrl": "https://picsum.photos/seed/identidade-digital/1200/800"
+      "nome": "Identidade Digital",
+      "segmento": "Marcas / Serviços",
+      "estilo": "Minimal luxuoso / Glass",
+      "imageHeroUrl": "https://picsum.photos/seed/identidade-digital/1200/800",
+      "urlProjeto": "#"
     },
     {
-      "titulo": "Experiência Imersiva",
-      "descricao": "Interações líquidas e microanimações para engajar.",
-      "tags": ["Interaction", "UI", "Craft"],
-      "imageUrl": "https://picsum.photos/seed/experiencia-imersiva/1200/800"
+      "nome": "Experiência Imersiva",
+      "segmento": "E-commerce / Experiências",
+      "estilo": "Motion / Superfícies líquidas",
+      "imageHeroUrl": "https://picsum.photos/seed/experiencia-imersiva/1200/800",
+      "urlProjeto": "#"
     }
   ]
 }

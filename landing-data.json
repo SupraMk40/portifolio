@@ -1,0 +1,92 @@
+{
+  "empresa": {
+    "nome": "Vitor",
+    "slug": "vitor",
+    "slogan": "Transformamos pixels em vértices de sucesso.",
+    "cidade": "Brasil",
+    "descricaoCurta": "Empresas de médio porte são o público-alvo. Sites que transformam visitantes em clientes."
+  },
+  "sobre": {
+    "abertura": "Eu sou empreendedor apaixonado por tecnologia. Comecei aos 10 anos de idade.",
+    "compromisso": "Eu não entrego apenas um site bonito. Eu construo o ponto mais alto da presença digital da sua marca.",
+    "destaques": [
+      "Em equipe",
+      "5 anos de experiência"
+    ]
+  },
+  "servicos": {
+    "titulo": "Serviços",
+    "itens": [
+      "Landing Pages (sem nicho principal)",
+      "Websites institucionais",
+      "Domínio e hospedagem de sites",
+      "Assistência e similares"
+    ]
+  },
+  "processo": {
+    "titulo": "Processo",
+    "etapas": [
+      "Briefing",
+      "Planejamento",
+      "Design",
+      "Desenvolvimento",
+      "Revisão",
+      "Entrega"
+    ]
+  },
+  "diferenciais": {
+    "titulo": "Diferenciais",
+    "itens": [
+      "Portfólio relevante",
+      "Processo definido e documentado",
+      "Performance técnica extrema",
+      "Suporte pos-entrega robusto e ilimitado",
+      "Confiança e segurança"
+    ]
+  },
+  "faq": {
+    "titulo": "FAQ",
+    "itens": [
+      {
+        "pergunta": "Vocês fazem Landing Pages e sites para qual público?",
+        "resposta": "Sim. Empresas de médio porte são o foco. Entregamos soluções que transformam visitantes em clientes."
+      },
+      {
+        "pergunta": "O que está incluso no processo?",
+        "resposta": "Briefing, planejamento, design, desenvolvimento, revisão e entrega. Tudo com um fluxo claro e organizado."
+      },
+      {
+        "pergunta": "Tem suporte após a entrega?",
+        "resposta": "Sim. Suporte pós-entrega robusto e ilimitado."
+      },
+      {
+        "pergunta": "Vocês usam depoimentos e estudos de caso?",
+        "resposta": "Não. Esta landing é direta e focada em valor, processo e performance."
+      }
+    ]
+  },
+  "ctaFinal": {
+    "titulo": "Pronto para transformar visitantes em clientes?",
+    "subtitulo": "Chame no WhatsApp ou siga nas redes.",
+    "links": {
+      "whatsapp": "https://wa.me/SEU_NUMERO",
+      "instagram": "https://instagram.com/SEU_USUARIO",
+      "linkedin": "https://linkedin.com/in/SEU_USUARIO"
+    }
+  },
+  "linksNav": [
+    {"label": "Hero", "href": "#hero"},
+    {"label": "Credibilidade", "href": "#credibilidade"},
+    {"label": "Sobre", "href": "#sobre"},
+    {"label": "Serviços", "href": "#servicos"},
+    {"label": "Processo", "href": "#processo"},
+    {"label": "Projetos", "href": "#projetos"},
+    {"label": "Diferenciais", "href": "#diferenciais"},
+    {"label": "FAQ", "href": "#faq"}
+  ],
+  "footer": {
+    "copyrightLabel": "© {ano} {nome}. Todos os direitos reservados.",
+    "assinatura": "Transformamos pixels em vértices de sucesso."
+  }
+}
+
