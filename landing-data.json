@@ -1,3 +1,98 @@
+<<<<<<< HEAD
+{
+  "empresa": {
+    "nome": "Vitor",
+    "slug": "vitor",
+    "slogan": "Transformamos pixels em vértices de sucesso.",
+    "cidade": "Brasil",
+    "descricaoCurta": "Se você já explicou 3 vezes o mesmo serviço para 3 pessoas diferentes, seu site está virando mais trabalho do que vendas."
+  },
+  "sobre": {
+    "abertura": "Nossa missão é aproximar sua empresa das pessoas que já procuram pelo que você oferece.",
+    "compromisso": "Se o visitante precisa de muito tempo para entender o que você faz, a página não está cumprindo seu papel. Por isso, desenvolvemos sites com comunicação clara, hierarquia visual bem definida e chamadas para ação posicionadas nos momentos certos. Cada elemento é pensado para facilitar a decisão do cliente e transformar visitantes em oportunidades reais de negócio.",
+    "destaques": [
+      "Em equipe",
+      "5 anos de experiência"
+    ]
+  },
+  "servicos": {
+    "titulo": "Serviços",
+    "itens": [
+      "Landing Pages que levam o visitante ao próximo passo",
+      "Websites institucionais que mostram valor rápido",
+      "Domínio e hospedagem para você não perder o arremate",
+      "Assistência e ajustes depois do lançamento"
+    ]
+  },
+  "processo": {
+    "titulo": "Processo",
+    "etapas": [
+      "Briefing (o que precisa acontecer no site)",
+      "Planejamento (estrutura e prioridades)",
+      "Design (hierarquia e legibilidade)",
+      "Desenvolvimento (performance e funcionamento)",
+      "Revisão (correções antes de publicar)",
+      "Entrega (site no ar + orientações)",
+      "Ajustes pós-entrega (quando algo muda no seu negócio)"
+    ]
+  },
+  "diferenciais": {
+    "titulo": "Diferenciais",
+    "itens": [
+      "Portfólio relevante (dá para ver o estilo e o resultado)",
+      "Processo definido (você sabe o que acontece e quando)",
+      "Performance técnica (menos travas, mais cliques)",
+      "Suporte pós-entrega (não some depois do prazo)",
+      "Confiança e segurança (entrega sem surpresas)"
+    ]
+  },
+  "faq": {
+    "titulo": "FAQ",
+    "itens": [
+      {
+        "pergunta": "Vocês fazem Landing Pages e sites para qual público?",
+        "resposta": "Sim. O foco é empresas de médio porte que precisam de mais clientes e querem parecer organizadas na internet — sem depender de improviso."
+      },
+      {
+        "pergunta": "O que está incluso no processo?",
+        "resposta": "Briefing, planejamento, design, desenvolvimento, revisão e entrega. Na prática: você passa por etapas e não “pula” decisões importantes."
+      },
+      {
+        "pergunta": "Tem suporte após a entrega?",
+        "resposta": "Sim. Depois que o site entra no ar, você continua com suporte para ajustar o que o seu negócio precisa — sem começar do zero."
+      },
+      {
+        "pergunta": "Vocês usam depoimentos e estudos de caso?",
+        "resposta": "Não como peça principal. A gente prefere explicar o caminho e o que a página faz: o visitante entende mais rápido e chega ao contato com menos atrito."
+      }
+    ]
+  },
+  "ctaFinal": {
+    "titulo": "Quer que seu site trabalhe no lugar do atendimento?",
+    "subtitulo": "Mande uma mensagem e diga o que você vende. Eu te respondo com o que eu ajustaria na sua página para gerar mais pedidos de orçamento.",
+    "links": {
+      "whatsapp": "https://wa.me/5511918207529?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AAcabei%20de%20conhecer%20seu%20site%20e%20quero%20entender%20como%20um%20site%20profissional%20pode%20ajudar%20minha%20empresa%20a%20gerar%20mais%20clientes.",
+      "instagram": "https://instagram.com/SEU_USUARIO",
+      "linkedin": "https://linkedin.com/in/SEU_USUARIO"
+    }
+  },
+  "linksNav": [
+    {"label": "Hero", "href": "#hero"},
+    {"label": "Credibilidade", "href": "#credibilidade"},
+    {"label": "Sobre", "href": "#sobre"},
+    {"label": "Serviços", "href": "#servicos"},
+    {"label": "Processo", "href": "#processo"},
+    {"label": "Projetos", "href": "#projetos"},
+    {"label": "Diferenciais", "href": "#diferenciais"},
+    {"label": "FAQ", "href": "#faq"}
+  ],
+  "footer": {
+    "copyrightLabel": "© {ano} {nome}. Todos os direitos reservados.",
+    "assinatura": "Transformamos pixels em vértices de sucesso."
+  }
+}
+
+=======
 {
   "empresa": {
     "nome": "Vitor",
@@ -90,3 +185,4 @@
   }
 }
 
+>>>>>>> bcad2e7cbabe4298a265a8c76db3ba95049b1c30
