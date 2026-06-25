@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "empresa": {
     "nome": "Vitor",
@@ -92,7 +92,6 @@
   }
 }
 
-=======
 {
   "empresa": {
     "nome": "Vitor",
@@ -184,5 +183,3 @@
     "assinatura": "Transformamos pixels em vértices de sucesso."
   }
 }
-
->>>>>>> bcad2e7cbabe4298a265a8c76db3ba95049b1c30

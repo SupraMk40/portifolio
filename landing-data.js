@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (() => {
   const jsonUrl = './landing-data.json';
 
@@ -123,7 +122,6 @@
   load();
 })();
 
-=======
 (() => {
   const jsonUrl = './landing-data.json';
 
@@ -244,5 +242,3 @@
 
   load();
 })();
-
->>>>>>> bcad2e7cbabe4298a265a8c76db3ba95049b1c30
