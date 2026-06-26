@@ -93,4 +93,4 @@
 
       hls.loadSource(videoUrl);
       hls.attachMedia(bgVideo);
-    
+
