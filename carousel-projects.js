@@ -25,9 +25,19 @@
     index = clamp(index, 0, projects.length - 1);
     const p = projects[index];
 
-    if (titleEl) titleEl.textContent = p.nome || '';
+    // Light feedback for perceived performance + a11y
+    if (titleEl) {
+      titleEl.style.opacity = '0.6';
+      titleEl.textContent = p.nome || '';
+      titleEl.style.transition = 'opacity 160ms ease';
+      requestAnimationFrame(() => {
+        titleEl.style.opacity = '1';
+      });
+    }
+
     if (metaEl) metaEl.textContent = p.segmento ? `Segmento: ${p.segmento}` : '';
     if (styleEl) styleEl.textContent = p.estilo ? `Estilo de design: ${p.estilo}` : '';
+
 
     if (heroImgEl && p.imageHeroUrl) {
       heroImgEl.src = p.imageHeroUrl;

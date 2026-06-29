@@ -61,38 +61,24 @@
           </div>
 
           <h1 class="font-[InstrumentSerif] text-4xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
-            <span class="heading-gradient" id="heroSlogan">Enquanto seu concorrente só “aparece”, seu site faz o visitante dar o próximo passo.</span>
+            <span class="heading-gradient" id="heroSlogan"></span>
           </h1>
 
           <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl" id="heroPromise">Você entra, lê 5 segundos e já sabe o que a página quer que você faça: pedir orçamento ou voltar depois com a decisão tomada.</p>
 
-          <p class="mt-4 text-base md:text-lg text-white/80 max-w-xl" id="heroAbout" ></p>
+          <p class="mt-4 text-base md:text-lg text-white/80 max-w-xl" id="heroAbout"></p>
 
-
-          <div class="mt-8 flex flex-col sm:flex-row items-center gap-3">
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-3" aria-label="Chamadas para ação">
             <a href="#projetos" class="primary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">Ver Projetos</a>
             <a href="https://wa.me/5511918207529?text=Ol%C3%A1%21%20%F0%9F%91%8B%0A%0AAcabei%20de%20conhecer%20seu%20site%20e%20quero%20entender%20como%20um%20site%20profissional%20pode%20ajudar%20minha%20empresa%20a%20gerar%20mais%20clientes." target="_blank" rel="noreferrer" class="secondary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">WhatsApp</a>
           </div>
 
-          <div class="mt-4 text-sm md:text-base text-white/75 space-y-2">
-
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>Em equipe.</span></div>
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>5 anos de experiência</span></div>
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-white/60"></span><span>Brasil</span></div>
-          </div>
-
-          <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl" id="heroPromise">Sites que transformam visitantes em clientes.</p>
-          <p class="mt-4 text-base md:text-lg text-white/80 max-w-xl" id="heroAbout" ></p>
-
-          <div class="mt-8 flex flex-col sm:flex-row items-center gap-3">
-            <a href="#projetos" class="primary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">Ver Projetos</a>
-            <a href="https://wa.me/SEU_NUMERO" target="_blank" rel="noreferrer" class="secondary-cta glass-pill px-6 py-3 text-sm md:text-base font-semibold transition hover:-translate-y-0.5">WhatsApp</a>
-          </div>
+          <p class="mt-6 text-base md:text-lg text-white/75 max-w-xl" id="heroPromiseSecondary">Enquanto seu concorrente só “aparece”, seu site faz o visitante dar o próximo passo.</p>
+          <p class="mt-4 text-base md:text-lg text-white/80 max-w-xl" id="heroAboutSecondary"></p>
         </div>
 
         <div class="relative">
           <div id="hero-3d" class="hero-3d min-h-[320px] lg:min-h-[420px] rounded-3xl overflow-hidden glass-panel"></div>
-          <div class="mt-4 text-xs text-white/60 leading-relaxed">Sem nicho principal. Empresas de médio porte.</div>
         </div>
       </div>
     </section>
@@ -111,11 +97,6 @@
         <div class="glass-panel rounded-3xl p-5">
           <div class="text-xs tracking-[0.22em] uppercase text-white/70">Foco</div>
           <div class="mt-2 text-lg font-semibold">Performance técnica + suporte ilimitado.</div>
-          <div class="mt-2 text-lg font-semibold">Empresas de médio porte</div>
-        </div>
-        <div class="glass-panel rounded-3xl p-5">
-          <div class="text-xs tracking-[0.22em] uppercase text-white/70">Foco</div>
-          <div class="mt-2 text-lg font-semibold">Performance técnica + suporte ilimitado</div>
         </div>
       </div>
     </section>
@@ -126,13 +107,7 @@
         <div class="text-xs tracking-[0.22em] uppercase text-white/70">Sobre</div>
         <h2 class="mt-3 text-2xl md:text-3xl font-medium">Criamos experiências digitais que unem estratégia, design e resultados.</h2>
         <p class="mt-4 text-base md:text-lg text-white/75 leading-[1.8]" id="aboutText"></p>
-        
-        <h2 class="mt-3 text-2xl md:text-3xl font-medium">Eu sou empreendedor apaixonado por tecnologia.</h2>
-        <p class="mt-4 text-base md:text-lg text-white/75 leading-[1.8]" id="aboutText"></p>
         <div class="mt-6 flex flex-col md:flex-row gap-4">
-          <div class="glass-pill px-4 py-2">Em equipe.</div>
-          <div class="glass-pill px-4 py-2">5 anos de experiência</div>
-          <div class="glass-pill px-4 py-2">Brasil</div>
         </div>
       </div>
     </section>
@@ -140,11 +115,12 @@
     <!-- SERVIÇOS -->
     <section id="servicos" class="w-full max-w-6xl py-6">
       <div class="text-center mb-4">
-        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2">
+        <div class="inline-flex items-center gap-2 glass-pill px-4 py-2" role="note" aria-label="Seção">
           <span class="text-xs tracking-[0.22em] uppercase text-white/80">Serviços</span>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
         <div class="glass-panel rounded-3xl p-6">
           <h3 class="text-lg font-semibold">O que entrego</h3>
           <ul class="mt-4 space-y-2 text-white/75">
@@ -159,7 +135,6 @@
           <p class="mt-4 text-white/75 leading-[1.8]">Uma estrutura preparada para crescer junto com a sua empresa.</p>
           <p class="mt-4 text-white/75 leading-[1.8]">Uma presença profissional que reduz objeções antes mesmo do primeiro contato.</p>
           <p class="mt-4 text-white/75 leading-[1.8]">Cada seção é planejada para conduzir o visitante até a ação.</p></div>
-          <p class="mt-4 text-white/75 leading-[1.8]">Eu não entrego apenas um site bonito. Eu construo o ponto mais alto da presença digital da sua marca.</p>
         </div>
       </div>
     </section>
@@ -214,8 +189,6 @@
             <div class="mt-2 text-white/75" data-project-style></div>
 
             <a id="projectOpen" data-project-open href="#" target="_blank" rel="noreferrer" class="mt-6 primary-cta glass-pill px-6 py-3 inline-flex items-center justify-center">Abrir projeto</a>
-
-            <div class="mt-6 text-xs text-white/60 leading-relaxed">Para adicionar mais projetos: edite `projects.json`.</div>
           </div>
         </div>
       </div>
@@ -291,7 +264,8 @@
     </footer>
   </main>
 
-  <div class="sr-only"><section id="contato"></section></div>
+  <div class="sr-only" aria-hidden="true"><section id="contato"></section></div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="carousel-projects.js"></script>

@@ -17,8 +17,14 @@
   const resolveYear = () => new Date().getFullYear();
 
   const setText = (el, text) => {
-    if (el && typeof text === 'string') el.textContent = text;
+    if (!el) return;
+    if (typeof text !== 'string') return;
+
+    // Avoid visible flicker: remove any initial placeholder content only after data is ready.
+    // If the value matches current text, do nothing.
+    if (el.textContent !== text) el.textContent = text;
   };
+
 
   function setLinksText(ids, value) {
     const el = document.getElementById(ids);
@@ -67,30 +73,26 @@
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
-      // Brand + hero
       setText(els.brandName, data?.empresa?.nome ?? 'Vertex');
       setText(els.heroSlogan, data?.empresa?.slogan ?? '');
 
-      // Evita usar o mesmo texto da seção “Sobre” em dois lugares.
-      // O hero usa a versão curta; a seção “Sobre” usa o bloco completo.
+      // Hero uses the short intro
       setText(els.heroAbout, data?.sobre?.abertura ?? '');
       setText(els.heroPromise, data?.empresa?.descricaoCurta ?? '');
 
-      // Sobre
-      const aboutText = [data?.sobre?.abertura, data?.sobre?.compromisso].filter(Boolean).join('\n');
+      // Sobre uses the full block
+      const aboutText = [data?.sobre?.abertura, data?.sobre?.compromisso]
+        .filter(Boolean)
+        .join('\n');
       setText(els.aboutText, aboutText);
 
-
-      // CTA
       setText(els.ctaTitle, data?.ctaFinal?.titulo ?? '');
       setText(els.ctaSub, data?.ctaFinal?.subtitulo ?? '');
 
-      // Links CTA
       setLinksText('ctaWhatsapp', data?.ctaFinal?.links?.whatsapp);
       setLinksText('ctaInstagram', data?.ctaFinal?.links?.instagram);
       setLinksText('ctaLinkedin', data?.ctaFinal?.links?.linkedin);
 
-      // Footer
       const year = resolveYear();
       const copyTpl = data?.footer?.copyrightLabel ?? '';
       const copy = copyTpl
@@ -100,7 +102,6 @@
       setText(els.footerSlogan, data?.footer?.assinatura ?? '');
       setText(els.footerCopy, copy);
 
-      // Nav
       if (els.navLinks) {
         const links = Array.isArray(data?.linksNav) ? data.linksNav : [];
         els.navLinks.innerHTML = links
@@ -112,7 +113,6 @@
           .join('');
       }
 
-      // FAQ
       fillFaq(data?.faq);
     } catch (e) {
       // fail silently
@@ -122,123 +122,3 @@
   load();
 })();
 
-(() => {
-  const jsonUrl = './landing-data.json';
-
-  const els = {
-    brandName: document.getElementById('brandName'),
-    heroSlogan: document.getElementById('heroSlogan'),
-    heroAbout: document.getElementById('heroAbout'),
-    heroPromise: document.getElementById('heroPromise'),
-    aboutText: document.getElementById('aboutText'),
-    ctaTitle: document.getElementById('ctaTitle'),
-    ctaSub: document.getElementById('ctaSub'),
-    footerSlogan: document.getElementById('footerSlogan'),
-    footerCopy: document.getElementById('footerCopy'),
-    navLinks: document.getElementById('navLinks'),
-  };
-
-  const resolveYear = () => new Date().getFullYear();
-
-  const setText = (el, text) => {
-    if (el && typeof text === 'string') el.textContent = text;
-  };
-
-  function setLinksText(ids, value) {
-    const el = document.getElementById(ids);
-    if (el && value) el.href = value;
-  }
-
-  function fillFaq(faqData) {
-    const faqList = document.getElementById('faqList');
-    if (!faqList) return;
-    const items = Array.isArray(faqData?.itens) ? faqData.itens : [];
-
-    if (!items.length) {
-      faqList.innerHTML = '<div class="text-white/70">Sem FAQ.</div>';
-      return;
-    }
-
-    faqList.innerHTML = items
-      .map(
-        (it, idx) => `
-        <details class="glass-panel rounded-2xl p-4 group" ${idx === 0 ? 'open' : ''}>
-          <summary class="cursor-pointer list-none flex items-center justify-between gap-4">
-            <span class="text-base font-medium">${escapeHtml(it?.pergunta ?? '')}</span>
-            <span class="text-white/60 group-open:rotate-45 transition" aria-hidden="true">+</span>
-          </summary>
-          <div class="mt-3 text-white/75 leading-[1.7]">
-            ${escapeHtml(it?.resposta ?? '')}
-          </div>
-        </details>
-      `
-      )
-      .join('');
-  }
-
-  function escapeHtml(value) {
-    return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '<')
-      .replace(/>/g, '>')
-      .replace(/"/g, '"')
-      .replace(/'/g, '&#039;');
-  }
-
-  async function load() {
-    try {
-      const res = await fetch(jsonUrl);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-
-      // Brand + hero
-      setText(els.brandName, data?.empresa?.nome ?? 'Vertex');
-      setText(els.heroSlogan, data?.empresa?.slogan ?? '');
-      setText(els.heroAbout, [data?.sobre?.abertura, data?.sobre?.compromisso].filter(Boolean).join(' '));
-      setText(els.heroPromise, data?.empresa?.descricaoCurta ?? '');
-
-      // Sobre
-      const aboutText =
-        [data?.sobre?.abertura, data?.sobre?.compromisso].filter(Boolean).join(' ');
-      setText(els.aboutText, aboutText);
-
-      // CTA
-      setText(els.ctaTitle, data?.ctaFinal?.titulo ?? '');
-      setText(els.ctaSub, data?.ctaFinal?.subtitulo ?? '');
-
-      // Links CTA
-      setLinksText('ctaWhatsapp', data?.ctaFinal?.links?.whatsapp);
-      setLinksText('ctaInstagram', data?.ctaFinal?.links?.instagram);
-      setLinksText('ctaLinkedin', data?.ctaFinal?.links?.linkedin);
-
-      // Footer
-      const year = resolveYear();
-      const copyTpl = data?.footer?.copyrightLabel ?? '';
-      const copy = copyTpl
-        .replace('{ano}', String(year))
-        .replace('{nome}', data?.empresa?.nome ?? '');
-
-      setText(els.footerSlogan, data?.footer?.assinatura ?? '');
-      setText(els.footerCopy, copy);
-
-      // Nav
-      if (els.navLinks) {
-        const links = Array.isArray(data?.linksNav) ? data.linksNav : [];
-        els.navLinks.innerHTML = links
-          .map(
-            (l) => `<li><a class="hover:text-white transition" href="${escapeHtml(l?.href ?? '#')}">${escapeHtml(
-              l?.label ?? ''
-            )}</a></li>`
-          )
-          .join('');
-      }
-
-      // FAQ
-      fillFaq(data?.faq);
-    } catch (e) {
-      // fail silently
-    }
-  }
-
-  load();
-})();
