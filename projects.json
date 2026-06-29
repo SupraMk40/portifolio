@@ -1,11 +1,11 @@
 {
   "projetos": [
     {
-      "nome": "Landing Page Premium",
-      "segmento": "SaaS / Produtos digitais",
-      "estilo": "Futurista / Glitch controlado",
-      "imageHeroUrl": "https://picsum.photos/seed/landing-premium/1200/800",
-      "urlProjeto": "#"
+      "nome": "Creative Tech",
+      "segmento": "SaaS / Rede Social",
+      "estilo": "Quiet Luxury / Swiss Design",
+      "imageHeroUrl": "https://mir-s3-cdn-cf.behance.net/projects/max_808/289c6d251926515.Y3JvcCwxNDQwLDExMjYsMCww.png",
+      "urlProjeto": "https://supramk40.github.io/modelosite01/"
     },
     {
       "nome": "Identidade Digital",

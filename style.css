@@ -208,6 +208,40 @@ img, svg, video { max-width: 100%; }
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+/* Centralize + destaque do texto do HERO (substitui hero-3d-overlay) */
+/* Centralizar hero em relação a toda a tela */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* centraliza tudo do hero no centro da tela (quando estiver visível) */
+#hero {
+  width: 100%;
+  text-align: center;
+}
+
+#hero > .grid {
+  width: 100%;
+}
+
+#hero h1 {  
+  font-size: clamp(2.2rem, 4vw, 4.75rem) !important;
+  line-height: 1.02;
+  margin-left: auto;
+  margin-right: auto;
+}
+#hero p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Desktop: centraliza o bloco de CTAs horizontalmente */
+#hero [aria-label="Chamadas para ação"] {
+  justify-content: center;
+}
+
+
 /* Hero placeholder 3D */
 .hero-3d {
   position: relative;
@@ -215,13 +249,6 @@ img, svg, video { max-width: 100%; }
     radial-gradient(circle at 70% 60%, rgba(210, 150, 255, 0.22), transparent 50%),
     rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.hero-3d-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.00), rgba(120, 200, 255, 0.18), rgba(255, 255, 255, 0.00));
-  filter: blur(0.2px);
 }
 
 /* Carousel */
@@ -254,7 +281,3 @@ img, svg, video { max-width: 100%; }
   background: rgba(120, 200, 255, 0.85);
   border-color: rgba(120, 200, 255, 0.85);
 }
-
-
-
-
